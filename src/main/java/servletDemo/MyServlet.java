@@ -1,4 +1,4 @@
-package com.osiki.week8demo;
+package servletDemo;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,7 +10,6 @@ import java.io.IOException;
 
 @WebServlet(name = "myServlet", value = "/my-servlet")
 public class MyServlet extends HttpServlet {
-
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("A post request has been made");
