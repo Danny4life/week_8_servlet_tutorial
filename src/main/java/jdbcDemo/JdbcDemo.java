@@ -26,21 +26,39 @@ public class JdbcDemo {
             //Create statement
             Statement statement = connection.createStatement();
 
-            // table name here -- sql command to read all entries
+            //1. CREATE do this first use this to insert data into the db
+
+            int insert = statement.executeUpdate("INSERT INTO users VALUES (1, 'Arya', 'Stark', 'ay@gmail.com', '00000')");
+
+            System.out.println(insert + " records inserted");
+
+
+            //2. READ do this second table name here -- sql command to read all entries
            // Execute queries
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
 
-            // sql command to get a read a single entry
-            //ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE id = 1");
+            //ResultSet result = statement.executeQuery("SELECT * FROM users");
 
+            // do this third sql command to get a read a single entry
+            //ResultSet result = statement.executeQuery("SELECT * FROM users WHERE id = 1");
 
-            while (resultSet.next()){
-                System.out.println(resultSet.getInt(1) +
-                        " " + resultSet.getString(2) +
-                        " " + resultSet.getString(3) +
-                        " " + resultSet.getString(4) +
-                        " " + resultSet.getString(5));
-            }
+//
+//            while (result.next()){
+//                System.out.println(result.getInt(1) +
+//                        " " + result.getString(2) +
+//                        " " + result.getString(3) +
+//                        " " + result.getString(4) +
+//                        " " + result.getString(5));
+//            }
+
+            // 3 UPDATE -- do this thirdly
+
+            //int update = statement.executeUpdate("UPDATE users SET firstName='joy', lastName='omo' WHERE id = 1");
+           // System.out.println(update + " record affected");
+
+            // 4 DELETE -- do this lastly
+
+            //int delete = statement.executeUpdate("DELETE FROM users WHERE id = 4");
+             //System.out.println(delete + " record deleted!");
 
             //Close connection
             connection.close();
