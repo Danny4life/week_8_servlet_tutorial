@@ -21,8 +21,12 @@ public class JdbcDemo {
 
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
-            // table name here
+            // table name here -- sql command to read all entries
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+
+            // sql command to get a read a single entry
+            //ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE id = 1");
+
 
             while (resultSet.next()){
                 System.out.println(resultSet.getInt(1) +
