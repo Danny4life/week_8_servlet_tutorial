@@ -17,11 +17,17 @@ public class JdbcDemo {
         String password = "PASSword1234!#";
 
         try{
+            // Register the Driver class
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+            // Create connection
             Connection connection = DriverManager.getConnection(url, username, password);
+
+            //Create statement
             Statement statement = connection.createStatement();
+
             // table name here -- sql command to read all entries
+           // Execute queries
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
 
             // sql command to get a read a single entry
@@ -35,6 +41,8 @@ public class JdbcDemo {
                         " " + resultSet.getString(4) +
                         " " + resultSet.getString(5));
             }
+
+            //Close connection
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
