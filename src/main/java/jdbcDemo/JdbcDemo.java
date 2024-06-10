@@ -28,7 +28,7 @@ public class JdbcDemo {
 
             //1. CREATE do this first use this to insert data into the db
 
-            int insert = statement.executeUpdate("INSERT INTO user VALUES (1, 'Arya', 'Stark', 'ay@gmail.com', '00000')");
+            int insert = statement.executeUpdate("INSERT INTO user VALUES (3, 'Arya', 'Stark', 'ay@gmail.com', '00000')");
             //int insert1 = statement.executeUpdate("INSERT INTO user VALUES (2, 'kit', 'Stark', 'ay@gmail.com', '00000')");
 
             System.out.println(insert + " records inserted");
