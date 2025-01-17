@@ -3,6 +3,7 @@ package jdbcDemo;
 
 import java.sql.*;
 
+//0. Add mysql dependency.
 //1. Register the Driver class
 //2. Create connection
 //3. Create statement
